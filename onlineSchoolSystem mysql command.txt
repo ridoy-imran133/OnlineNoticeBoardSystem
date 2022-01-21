@@ -1,0 +1,62 @@
+
+
+CREATE TABLE  `noticedb`.`info` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `password` varchar(45) NOT NULL DEFAULT '',
+  `firstname` varchar(45) NOT NULL DEFAULT '',
+  `lastname` varchar(45) NOT NULL DEFAULT '',
+  `email` varchar(45) NOT NULL DEFAULT '',
+  `address` varchar(45) NOT NULL DEFAULT '',
+  `phone` varchar(45) NOT NULL DEFAULT '',
+  `username` varchar(45) NOT NULL DEFAULT '',
+  `photoPath` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `noticedb`.`login` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `password` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `noticedb`.`notice` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `notice` text,
+  `create_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `valueable` int(10) unsigned NOT NULL DEFAULT '0',
+  `notice_title` varchar(45) NOT NULL DEFAULT '',
+  `admin_email` varchar(45) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `noticedb`.`singup` (
+  `signID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(45) NOT NULL DEFAULT '',
+  `status` varchar(45) NOT NULL DEFAULT '',
+  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `activationCode` varchar(45) NOT NULL DEFAULT '',
+  PRIMARY KEY (`signID`)
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `noticedb`.`user_info` (
+  `username` varchar(45) NOT NULL DEFAULT '',
+  `password` varchar(45) NOT NULL DEFAULT '',
+  `firstname` varchar(45) NOT NULL DEFAULT '',
+  `lastname` varchar(45) NOT NULL DEFAULT '',
+  `address` varchar(45) NOT NULL DEFAULT '',
+  `phone` varchar(45) NOT NULL DEFAULT '',
+  `gender` varchar(45) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `noticedb`.`user_login` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) NOT NULL DEFAULT '',
+  `password` varchar(45) NOT NULL DEFAULT '',
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
